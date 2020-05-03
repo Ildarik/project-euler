@@ -9,18 +9,19 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 let isDone = false;
 
-i = 2521;
+let starter = 2521;
 
 while (!isDone) {
-  i++;
+  starter++;
 
-  for (let b = 1; b <= 20; b++) {
-    if (i % b) {
-      break;
-    } else if (!(i % b) && b == 20) {
-      console.log(i);
+  let divider = 1;
+
+  while (divider <= 20 && !(starter % divider)) {
+    if (divider == 20) {
+      console.log(starter);
       isDone = true;
-      break;
     }
+
+    divider++;
   }
 }
