@@ -9,7 +9,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 let isDone = false;
 
-let starter = 2521;
+let starter = 1;
 
 while (!isDone) {
   starter++;
