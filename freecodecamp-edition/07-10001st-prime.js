@@ -1,3 +1,5 @@
+/* Prime number is not divisible by other prime numbers smaller than itself */
+
 function nthPrime(n) {
   let primes = [2, 3];
 
