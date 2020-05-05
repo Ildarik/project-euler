@@ -1,15 +1,13 @@
 function nthPrime(n) {
-  let primes = [];
+  let primes = [2, 3];
 
-  for (let i = 2; !primes[n - 2]; i++) {
-    for (let b = i - 1; b > 1; b--) {
-      if (!(i % b)) {
-        break;
-      } else if (b == 2) {
-        primes.push(i);
-      }
+  for (let i = 4; !primes[n - 1]; i++) {
+    if (primes.every((prime) => i % prime)) {
+      primes.push(i);
     }
   }
 
-  return primes[n - 2];
+  return primes[n - 1];
 }
+
+console.log(nthPrime(6));
