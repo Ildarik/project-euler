@@ -105,17 +105,19 @@ let result = "";
 
 let forAdd = 0;
 
+const String = (number) => number.toString();
+
 for (let i = 49; i >= 0; i--) {
   let sum = arrayOfNumbers.reduce((acc, item) => acc + Number(item[i]), 0);
 
   sum += forAdd;
 
-  forAdd = Number(sum.toString().slice(0, sum.toString().length - 1));
+  forAdd = Number(String(sum).slice(0, String(sum).length - 1));
 
   result =
     i === 0
-      ? sum.toString().concat(result)
-      : sum.toString()[sum.toString().length - 1].concat(result);
+      ? String(sum).concat(result)
+      : String(sum)[String(sum).length - 1].concat(result);
 }
 
 console.log(result);
