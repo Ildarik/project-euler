@@ -101,10 +101,21 @@ const rowsOfNumbers = `37107287533902102798797998220837590246510135740250
 
 const arrayOfNumbers = rowsOfNumbers.split("\n");
 
-const bigInt = require("big-integer");
+let result = "";
 
-const sum = arrayOfNumbers
-  .map((i) => bigInt(i))
-  .reduce((acc, item) => acc + item);
+let forAdd = 0;
 
-console.log(sum.toLocaleString());
+for (let i = 49; i >= 0; i--) {
+  let sum = arrayOfNumbers.reduce((acc, item) => acc + Number(item[i]), 0);
+
+  sum += forAdd;
+
+  forAdd = Number(sum.toString().slice(0, sum.toString().length - 1));
+
+  result =
+    i === 0
+      ? sum.toString().concat(result)
+      : sum.toString()[sum.toString().length - 1].concat(result);
+}
+
+console.log(result);
