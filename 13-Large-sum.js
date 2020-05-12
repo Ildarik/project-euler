@@ -105,8 +105,6 @@ let result = "";
 
 let forAdd = 0;
 
-const String = (number) => number.toString();
-
 for (let i = 49; i >= 0; i--) {
   let sum = arrayOfNumbers.reduce((acc, item) => acc + Number(item[i]), 0);
 
